@@ -1,0 +1,26 @@
+{
+  "compartments_configuration": {
+    "enable_delete": true,
+    "default_parent_id": "ocid1.compartment.oc1..aaaaaaaaft6mnil4nomqh2chnjyc5zzgmfryye3zzyzpugwsbmuvdyrhhq5a",
+    "compartments": {
+      "CMP-LANDINGZONE-P-KEY": {
+        "name": "cmp-lzp",
+        "description": "one-oe-lz environment:PROD ",
+        "children": {
+          "CMP-NETWORK-KEY": {
+            "name": "cmp-lzp-network",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          },
+          "CMP-SECURITY-KEY": {
+            "name": "cmp-lzp-security",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          },
+          "CMP-PLATFORM-KEY": {
+            "name": "cmp-lzp-platform",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          }
+        }
+      }
+    }
+  }
+}
