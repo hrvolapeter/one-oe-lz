@@ -1,1 +1,394 @@
-{}
+{
+  "network_configuration": {
+    "default_enable_cis_checks": false,
+    "default_compartment_id": "CMP-NETWORK-KEY",
+    "network_configuration_categories": {
+      "shared": {
+        "category_compartment_key": "CMP-NETWORK-KEY",
+        "vcns": {
+          "VCN-FRA-P-HUB-KEY": {
+            "block_nat_traffic": false,
+            "cidr_blocks": [
+              "10.0.0.0/21"
+            ],
+            "dhcp_options": {},
+            "display_name": "vcn-lzp-fra-hub",
+            "dns_label": "fraphub",
+            "is_attach_drg": false,
+            "is_create_igw": false,
+            "is_ipv6enabled": false,
+            "is_oracle_gua_allocation_enabled": false,
+            "network_security_groups": {
+              "NSG-01-HUB-VCN-KEY": {
+                "display_name": "nsg-01-hub-vcn",
+                "egress_rules": {
+                  "anywhere": {
+                    "description": "egress to 0.0.0.0/0 over TCP",
+                    "dst": "0.0.0.0/0",
+                    "dst_type": "CIDR_BLOCK",
+                    "protocol": "TCP",
+                    "stateless": false
+                  }
+                },
+                "ingress_rules": {
+                  "ssh_22": {
+                    "description": "ingress from 0.0.0.0/0 over TCP22",
+                    "dst_port_max": 22,
+                    "dst_port_min": 22,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  }
+                }
+              },
+              "NSG-02-HUB-VCN-KEY": {
+                "display_name": "nsg-02-hub-vcn",
+                "egress_rules": {
+                  "anywhere": {
+                    "description": "egress to 0.0.0.0/0 over TCP",
+                    "dst": "0.0.0.0/0",
+                    "dst_type": "CIDR_BLOCK",
+                    "protocol": "TCP",
+                    "stateless": false
+                  }
+                },
+                "ingress_rules": {
+                  "http_80": {
+                    "description": "ingress from 0.0.0.0/0 over HTTP80",
+                    "dst_port_max": 80,
+                    "dst_port_min": 80,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  },
+                  "https_443": {
+                    "description": "ingress from 0.0.0.0/0 over HTTPs443",
+                    "dst_port_max": 443,
+                    "dst_port_min": 443,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  },
+                  "ssh_22": {
+                    "description": "ingress from 0.0.0.0/0 over TCP22",
+                    "dst_port_max": 22,
+                    "dst_port_min": 22,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  }
+                }
+              },
+              "NSG-03-HUB-VCN-KEY": {
+                "display_name": "nsg-03-hub-vcn",
+                "egress_rules": {
+                  "anywhere": {
+                    "description": "egress to 0.0.0.0/0 over TCP",
+                    "dst": "0.0.0.0/0",
+                    "dst_type": "CIDR_BLOCK",
+                    "protocol": "TCP",
+                    "stateless": false
+                  }
+                },
+                "ingress_rules": {
+                  "http_8080": {
+                    "description": "ingress from 0.0.0.0/0 over HTTP8080",
+                    "dst_port_max": 80,
+                    "dst_port_min": 80,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  },
+                  "ssh_22": {
+                    "description": "ingress from 0.0.0.0/0 over TCP22",
+                    "dst_port_max": 22,
+                    "dst_port_min": 22,
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  }
+                }
+              }
+            },
+            "default_route_table": {},
+            "route_tables": {
+              "RT-00-HUB-VCN-INGRESS-KEY": {
+                "display_name": "rt-00-hub-vcn-ingress",
+                "route_rules": {
+                  "rt_vcn_fra_p_projects": {
+                    "description": "Route to spoke VCN vcn-fra-p-projects",
+                    "destination": "10.1.8.0/21",
+                    "destination_type": "CIDR_BLOCK",
+                    "network_entity_id": "ocid1.privateip.oc1.eu-frankfurt-1.abtheljry7pg4exdroak7m3xrfahhjndclm4zm7lxn4k675ij4vrxro4ce2q"
+                  },
+                  "rt_ch_internet": {
+                    "description": "Route to Public Internet through Connectivity Hub, EW traffic",
+                    "destination": "0.0.0.0/0",
+                    "destination_type": "CIDR_BLOCK",
+                    "network_entity_id": "ocid1.privateip.oc1.eu-frankfurt-1.abtheljry7pg4exdroak7m3xrfahhjndclm4zm7lxn4k675ij4vrxro4ce2q"
+                  }
+                }
+              },
+              "RT-01-HUB-VCN-LB-KEY": {
+                "display_name": "rt-01-hub-vcn-lb",
+                "route_rules": {}
+              },
+              "RT-02-HUB-VCN-NFW-KEY": {
+                "display_name": "rt-02-hub-vcn-nfw",
+                "route_rules": {
+                  "rt_vcn_fra_p_projects": {
+                    "description": "Route to spoke VCN vcn-fra-p-projects",
+                    "destination": "10.1.8.0/21",
+                    "destination_type": "CIDR_BLOCK",
+                    "network_entity_key": "DRG-FRA-HUB-KEY"
+                  },
+                  "rt_ch_internet": {
+                    "description": "Route to Public Internet through Connectivity Hub, EW traffic",
+                    "destination": "0.0.0.0/0",
+                    "destination_type": "CIDR_BLOCK",
+                    "network_entity_key": "DRG-FRA-HUB-KEY"
+                  },
+                  "rt_sgw": {
+                    "description": "Route for sgw",
+                    "destination": "all-services",
+                    "destination_type": "SERVICE_CIDR_BLOCK",
+                    "network_entity_key": "SG-FRA-HUB-KEY"
+                  }
+                }
+              },
+              "RT-03-HUB-VCN-NATGW-KEY": {
+                "display_name": "rt-03-hub-vcn-natgw",
+                "route_rules": {}
+              },
+              "RT-04-HUB-VCN-OSN-KEY": {
+                "display_name": "rt-04-hub-vcn-osn",
+                "route_rules": {
+                  "sgw_route": {
+                    "description": "Route for sgw",
+                    "destination": "all-services",
+                    "destination_type": "SERVICE_CIDR_BLOCK",
+                    "network_entity_key": "SG-FRA-HUB-KEY"
+                  }
+                }
+              }
+            },
+            "default_security_list": {
+              "display_name": "defseclist-fra-hub-vcn",
+              "egress_rules": [],
+              "ingress_rules": [
+                {
+                  "stateless": false,
+                  "protocol": "ICMP",
+                  "description": "ICMP type 3 code 4",
+                  "src": "0.0.0.0/0",
+                  "src_type": "CIDR_BLOCK",
+                  "icmp_type": 3,
+                  "icmp_code": 4
+                },
+                {
+                  "stateless": false,
+                  "protocol": "ICMP",
+                  "description": "ICMP type 3",
+                  "src": "10.0.0.0/18",
+                  "src_type": "CIDR_BLOCK",
+                  "icmp_type": 3,
+                  "icmp_code": -1
+                },
+                {
+                  "stateless": false,
+                  "protocol": "ICMP",
+                  "description": "ICMP type 3",
+                  "src": "192.168.0.0/18",
+                  "src_type": "CIDR_BLOCK",
+                  "icmp_type": 3,
+                  "icmp_code": -1
+                }
+              ]
+            },
+            "security_lists": {
+              "SL-01-HUB-VCN-KEY": {
+                "display_name": "sl-01-hub-vcn",
+                "egress_rules": [
+                  {
+                    "description": "egress to 0.0.0.0/0 over ALL protocols",
+                    "dst": "0.0.0.0/0",
+                    "dst_type": "CIDR_BLOCK",
+                    "protocol": "ALL",
+                    "stateless": false
+                  }
+                ],
+                "ingress_rules": [
+                  {
+                    "description": "ingress from 0.0.0.0/0 ALL ports",
+                    "protocol": "TCP",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  }
+                ]
+              },
+              "SL-02-VCN-KEY": {
+                "display_name": "sl-02-hub-vcn",
+                "egress_rules": [
+                  {
+                    "description": "egress to 0.0.0.0/0 over TCP",
+                    "dst": "0.0.0.0/0",
+                    "dst_type": "CIDR_BLOCK",
+                    "protocol": "ALL",
+                    "stateless": false
+                  }
+                ],
+                "ingress_rules": [
+                  {
+                    "description": "ingress from 0.0.0.0/0 over all ports",
+                    "protocol": "ALL",
+                    "src": "0.0.0.0/0",
+                    "src_type": "CIDR_BLOCK",
+                    "stateless": false
+                  }
+                ]
+              }
+            },
+            "subnets": {
+              "SN-FRA-P-HUB-LB-KEY": {
+                "availability_domain": null,
+                "cidr_block": "10.0.0.0/24",
+                "dhcp_options_key": "default_dhcp_options",
+                "display_name": "sn-fra-p-hub-lb",
+                "dns_label": "snfraphublb",
+                "prohibit_internet_ingress": false,
+                "prohibit_public_ip_on_vnic": false,
+                "route_table_key": "RT-01-HUB-VCN-LB-KEY",
+                "security_list_keys": [
+                  "SL-01-HUB-VCN-KEY"
+                ]
+              },
+              "SN-FRA-P-HUB-FW-KEY": {
+                "cidr_block": "10.0.1.0/24",
+                "dhcp_options_key": "default_dhcp_options",
+                "display_name": "sn-fra-p-hub-fw",
+                "dns_label": "snfraphubfw",
+                "prohibit_internet_ingress": true,
+                "prohibit_public_ip_on_vnic": true,
+                "route_table_key": "RT-02-HUB-VCN-NFW-KEY",
+                "security_list_keys": [
+                  "SL-02-HUB-VCN-KEY"
+                ]
+              },
+              "SN-FRA-P-HUB-MGMT-KEY": {
+                "cidr_block": "10.0.2.0/24",
+                "dhcp_options_key": "default_dhcp_options",
+                "display_name": "sn-fra-p-hub-mgmt",
+                "dns_label": "snfraphubmgmt",
+                "prohibit_internet_ingress": true,
+                "prohibit_public_ip_on_vnic": true,
+                "route_table_key": "RT-04-HUB-VCN-OSN-KEY",
+                "security_list_keys": [
+                  "SL-02-HUB-VCN-KEY"
+                ]
+              },
+              "SN-FRA-P-HUB-LOGS-KEY": {
+                "cidr_block": "10.0.3.0/24",
+                "dhcp_options_key": "default_dhcp_options",
+                "display_name": "sn-fra-p-hub-logs",
+                "dns_label": "snfraphublogs",
+                "prohibit_internet_ingress": true,
+                "prohibit_public_ip_on_vnic": true,
+                "route_table_key": "RT-04-HUB-VCN-OSN-KEY",
+                "security_list_keys": [
+                  "SL-02-HUB-VCN-KEY"
+                ]
+              },
+              "SN-FRA-P-HUB-DNS": {
+                "cidr_block": "10.0.4.0/24",
+                "dhcp_options_key": "default_dhcp_options",
+                "display_name": "sn-fra-p-hub-dns",
+                "dns_label": "snfraphubdns",
+                "prohibit_internet_ingress": true,
+                "prohibit_public_ip_on_vnic": true,
+                "route_table_key": "RT-04-HUB-VCN-OSN-KEY",
+                "security_list_keys": [
+                  "SL-02-HUB-VCN-KEY"
+                ]
+              }
+            },
+            "vcn_specific_gateways": {
+              "internet_gateways": {
+                "IG-FRA-HUB-KEY": {
+                  "display_name": "ig-fra-hub",
+                  "enabled": true
+                }
+              },
+              "nat_gateways": {
+                "NG-FRA-HUB-KEY": {
+                  "display_name": "ng-fra-hub",
+                  "enabled": true,
+                  "route_table_key": "RT-03-OE-HUB-VCN-NATGW-KEY"
+                }
+              },
+              "service_gateways": {
+                "SG-FRA-HUB-KEY": {
+                  "display_name": "sg-fra-hub",
+                  "services": "all-services"
+                }
+              }
+            }
+          }
+        },
+        "non_vcn_specific_gateways": {
+          "dynamic_routing_gateways": {
+            "DRG-FRA-HUB-KEY": {
+              "display_name": "drg-fra-hub",
+              "drg_attachments": {
+                "DRGATT-VCN-FRA-HUB-KEY": {
+                  "display_name": "drgatt-vcn-fra-hub",
+                  "drg_route_table_key": "DRGRT-VCN-FRA-HUB-KEY",
+                  "network_details": {
+                    "attached_resource_key": "VCN-FRA-P-HUB-KEY",
+                    "type": "VCN",
+                    "route_table_key": "RT-00-HUB-VCN-INGRESS-KEY"
+                  }
+                }
+              },
+              "drg_route_distributions": {
+                "IRTD-HUB-KEY": {
+                  "display_name": "irtd-hub",
+                  "distribution_type": "IMPORT",
+                  "statements": {
+                    "drg_route_distribution_vcn": {
+                      "priority": 1,
+                      "action": "ACCEPT",
+                      "match_criteria": {
+                        "match_type": "DRG_ATTACHMENT_TYPE",
+                        "attachment_type": "VCN"
+                      }
+                    }
+                  }
+                }
+              },
+              "drg_route_tables": {
+                "DRGRT-VCN-FRA-HUB-KEY": {
+                  "display_name": "drgrt-vcn-fra-hub",
+                  "import_drg_route_distribution_key": "IRTD-HUB-KEY",
+                  "is_ecmp_enabled": false,
+                  "route_rules": {}
+                }
+              }
+            }
+          },
+          "network_firewalls_configuration": {
+            "network_firewalls": {},
+            "network_firewall_policies": {}
+          },
+          "l7_load_balancers": {}
+        }
+      }
+    }
+  }
+}

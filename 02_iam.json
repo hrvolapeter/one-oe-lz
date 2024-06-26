@@ -59,7 +59,7 @@
           "allow group grp-iam-admins-xfz to manage users in tenancy where all {request.operation != 'ListApiKeys',request.operation != 'ListAuthTokens',request.operation != 'ListCustomerSecretKeys',request.operation != 'UploadApiKey',request.operation != 'DeleteApiKey',request.operation != 'UpdateAuthToken',request.operation != 'CreateAuthToken',request.operation != 'DeleteAuthToken',request.operation != 'CreateSecretKey',request.operation != 'UpdateCustomerSecretKey',request.operation != 'DeleteCustomerSecretKey'}",
           "allow group grp-iam-admins-xfz to inspect groups in tenancy",
           "allow group grp-iam-admins-xfz to read policies in tenancy",
-          "allow group grp-iam-admins-xfz to manage groups in tenancy where all {target.group.name != 'Administrators',target.group.name != 'paalonso-mtlz-tfcli-grp-oe-credential-admins'}",
+          "allow group grp-iam-admins-xfz to manage groups in tenancy where all {target.group.name != 'Administrators',target.group.name != 'grp-credential-admins-xfz'}",
           "allow group grp-iam-admins-xfz to inspect identity-providers in tenancy",
           "allow group grp-iam-admins-xfz to manage identity-providers in tenancy where any {request.operation = 'AddIdpGroupMapping', request.operation = 'DeleteIdpGroupMapping'}",
           "allow group grp-iam-admins-xfz to manage dynamic-groups in tenancy",
