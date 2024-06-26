@@ -329,7 +329,7 @@
                 "NG-FRA-HUB-KEY": {
                   "display_name": "ng-fra-hub",
                   "enabled": true,
-                  "route_table_key": "RT-03-OE-HUB-VCN-NATGW-KEY"
+                  "route_table_key": "RT-03-HUB-VCN-NATGW-KEY"
                 }
               },
               "service_gateways": {
