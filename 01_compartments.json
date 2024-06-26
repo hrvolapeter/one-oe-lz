@@ -46,19 +46,19 @@
             "description": "one-oe-lz environment:UAT compartment:LZP",
             "children": {
               "CMP-U-NETWORK-KEY": {
-                "name": "cmp-lzp-network",
+                "name": "cmp-lzp-u-network",
                 "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
               },
               "CMP-U-SECURITY-KEY": {
-                "name": "cmp-lzp-security",
+                "name": "cmp-lzp-u-security",
                 "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
               },
               "CMP-U-PLATFORM-KEY": {
-                "name": "cmp-lzp-p-platform",
+                "name": "cmp-lzp-u-platform",
                 "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
               },
               "CMP-U-PROJECTS-KEY": {
-                "name": "cmp-lzp-p-projects",
+                "name": "cmp-lzp-u-projects",
                 "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
               }
             }
