@@ -1,10 +1,10 @@
 {
   "network_configuration": {
     "default_enable_cis_checks": false,
-    "default_compartment_id": "CMP-NETWORK-KEY",
+    "default_compartment_id": "ocid1.compartment.oc1..aaaaaaaa4oyvgqkkzxmb2p6gnwyosxlw2pfmqs2pr2eh46d5jyc2atwa6aeq",
     "network_configuration_categories": {
       "shared": {
-        "category_compartment_key": "CMP-NETWORK-KEY",
+        "category_compartment_id": "ocid1.compartment.oc1..aaaaaaaa4oyvgqkkzxmb2p6gnwyosxlw2pfmqs2pr2eh46d5jyc2atwa6aeq",
         "vcns": {
           "VCN-FRA-P-HUB-KEY": {
             "block_nat_traffic": false,
@@ -306,8 +306,19 @@
               }
             },
             "vcn_specific_gateways": {
-              "internet_gateways": {},
-              "nat_gateways": {},
+              "internet_gateways": {
+                "IG-FRA-HUB-KEY": {
+                  "display_name": "ig-fra-hub",
+                  "enabled": true
+                }
+              },
+              "nat_gateways": {
+                "NG-FRA-HUB-KEY": {
+                  "display_name": "ng-fra-hub",
+                  "enabled": true,
+                  "route_table_key": "RT-03-HUB-VCN-NATGW-KEY"
+                }
+              },
               "service_gateways": {
                 "SG-FRA-HUB-KEY": {
                   "display_name": "sg-fra-hub",
