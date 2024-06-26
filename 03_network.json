@@ -306,19 +306,8 @@
               }
             },
             "vcn_specific_gateways": {
-              "internet_gateways": {
-                "IG-FRA-HUB-KEY": {
-                  "display_name": "ig-fra-hub",
-                  "enabled": true
-                }
-              },
-              "nat_gateways": {
-                "NG-FRA-HUB-KEY": {
-                  "display_name": "ng-fra-hub",
-                  "enabled": true,
-                  "route_table_key": "RT-03-HUB-VCN-NATGW-KEY"
-                }
-              },
+              "internet_gateways": {},
+              "nat_gateways": {},
               "service_gateways": {
                 "SG-FRA-HUB-KEY": {
                   "display_name": "sg-fra-hub",
