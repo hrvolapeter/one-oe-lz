@@ -120,20 +120,7 @@
             "route_tables": {
               "RT-00-HUB-VCN-INGRESS-KEY": {
                 "display_name": "rt-00-hub-vcn-ingress",
-                "route_rules": {
-                  "rt_vcn_fra_p_projects": {
-                    "description": "Route to spoke VCN vcn-fra-p-projects",
-                    "destination": "10.1.8.0/21",
-                    "destination_type": "CIDR_BLOCK",
-                    "network_entity_id": "ocid1.privateip.oc1.eu-frankfurt-1.abtheljry7pg4exdroak7m3xrfahhjndclm4zm7lxn4k675ij4vrxro4ce2q"
-                  },
-                  "rt_ch_internet": {
-                    "description": "Route to Public Internet through Connectivity Hub, EW traffic",
-                    "destination": "0.0.0.0/0",
-                    "destination_type": "CIDR_BLOCK",
-                    "network_entity_id": "ocid1.privateip.oc1.eu-frankfurt-1.abtheljry7pg4exdroak7m3xrfahhjndclm4zm7lxn4k675ij4vrxro4ce2q"
-                  }
-                }
+                "route_rules": {}
               },
               "RT-01-HUB-VCN-LB-KEY": {
                 "display_name": "rt-01-hub-vcn-lb",
