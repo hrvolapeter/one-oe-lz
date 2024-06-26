@@ -51,7 +51,7 @@
         ]
       },
       "PCY-IAM-ADMINISTRATION": {
-        "name": "pcy-credential-administration-xfz",
+        "name": "pcy-iam-administration-xfz",
         "description": "POL.01 Open LZ allows grp-iam-admins-xfz group users to manage IAM resoures in the tenancy.",
         "compartment_id": "TENANCY-ROOT",
         "statements": [
