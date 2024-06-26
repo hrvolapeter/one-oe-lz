@@ -233,7 +233,7 @@
                   }
                 ]
               },
-              "SL-02-VCN-KEY": {
+              "SL-02-HUB-VCN-KEY": {
                 "display_name": "sl-02-hub-vcn",
                 "egress_rules": [
                   {
