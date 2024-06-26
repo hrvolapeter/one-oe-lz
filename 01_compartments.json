@@ -62,13 +62,7 @@
                 "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
               }
             }
-          }
-        }
-      },
-      "CMP-LANDINGZONE-D-KEY": {
-        "name": "cmp-lzd",
-        "description": "one-oe-lz environment:DEV ",
-        "children": {
+          },
           "CMP-DEV-KEY": {
             "name": "cmp-lzd-dev",
             "description": "one-oe-lz environment:DEV compartment:LZD",
