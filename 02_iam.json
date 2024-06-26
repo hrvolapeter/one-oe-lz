@@ -98,7 +98,7 @@
         "description": "POL.04 Open LZ policy which allows grp-budget-admins-xfz group users to manage all budget resources in the tenancy.",
         "compartment_id": "TENANCY-ROOT",
         "statements": [
-          "define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaatvskd4rq2srf5santd42yzwd3kskkoueyqxxhnshsxart4535oeq",
+          "define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq",
           "endorse group to read objects in tenancy usage-report",
           "allow group grp-budget-admins-xfz to manage usage-report in tenancy",
           "allow group grp-budget-admins-xfz to manage usage-budgets in tenancy"
@@ -110,22 +110,22 @@
         "compartment_id": "TENANCY-ROOT",
         "statements": [
           "allow group grp-auditors-xfz to inspect all-resources in tenancy",
-          "allow groupgrp-auditors-xfz to read instances in tenancy",
-          "allow groupgrp-auditors-xfz to read load-balancers in tenancy",
-          "allow groupgrp-auditors-xfz to read buckets in tenancy",
-          "allow groupgrp-auditors-xfz to read nat-gateways in tenancy",
-          "allow groupgrp-auditors-xfz to read public-ips in tenancy",
-          "allow groupgrp-auditors-xfz to read file-family in tenancy",
-          "allow groupgrp-auditors-xfz to read instance-configurations in tenancy",
-          "allow groupgrp-auditors-xfz to read network-security-groups in tenancy",
-          "allow groupgrp-auditors-xfz to read resource-availability in tenancy",
-          "allow groupgrp-auditors-xfz to read audit-events in tenancy",
-          "allow groupgrp-auditors-xfz to read users in tenancy",
-          "allow groupgrp-auditors-xfz to use cloud-shell in tenancy",
-          "allow groupgrp-auditors-xfz to read vss-family in tenancy",
-          "allow groupgrp-auditors-xfz to read usage-budgets in tenancy",
-          "allow groupgrp-auditors-xfz to read usage-reports in tenancy",
-          "allow groupgrp-auditors-xfz to read data-safe-family in tenancy"
+          "allow group grp-auditors-xfz to read instances in tenancy",
+          "allow group grp-auditors-xfz to read load-balancers in tenancy",
+          "allow group grp-auditors-xfz to read buckets in tenancy",
+          "allow group grp-auditors-xfz to read nat-gateways in tenancy",
+          "allow group grp-auditors-xfz to read public-ips in tenancy",
+          "allow group grp-auditors-xfz to read file-family in tenancy",
+          "allow group grp-auditors-xfz to read instance-configurations in tenancy",
+          "allow group grp-auditors-xfz to read network-security-groups in tenancy",
+          "allow group grp-auditors-xfz to read resource-availability in tenancy",
+          "allow group grp-auditors-xfz to read audit-events in tenancy",
+          "allow group grp-auditors-xfz to read users in tenancy",
+          "allow group grp-auditors-xfz to use cloud-shell in tenancy",
+          "allow group grp-auditors-xfz to read vss-family in tenancy",
+          "allow group grp-auditors-xfz to read usage-budgets in tenancy",
+          "allow group grp-auditors-xfz to read usage-reports in tenancy",
+          "allow group grp-auditors-xfz to read data-safe-family in tenancy"
         ]
       },
       "PCY-NETWORK-ADMINISTRATION": {
