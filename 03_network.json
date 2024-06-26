@@ -1,10 +1,10 @@
 {
   "network_configuration": {
     "default_enable_cis_checks": false,
-    "default_compartment_id": "ocid1.compartment.oc1..aaaaaaaa4oyvgqkkzxmb2p6gnwyosxlw2pfmqs2pr2eh46d5jyc2atwa6aeq",
+    "default_compartment_id": "CMP-NETWORK-KEY",
     "network_configuration_categories": {
       "shared": {
-        "category_compartment_id": "ocid1.compartment.oc1..aaaaaaaa4oyvgqkkzxmb2p6gnwyosxlw2pfmqs2pr2eh46d5jyc2atwa6aeq",
+        "category_compartment_id": "CMP-NETWORK-KEY",
         "vcns": {
           "VCN-FRA-P-HUB-KEY": {
             "block_nat_traffic": false,
