@@ -99,7 +99,7 @@
         "compartment_id": "TENANCY-ROOT",
         "statements": [
           "define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq",
-          "endorse group to read objects in tenancy usage-report",
+          "endorse group grp-budget-admins-xfz to read objects in tenancy usage-report",
           "allow group grp-budget-admins-xfz to manage usage-report in tenancy",
           "allow group grp-budget-admins-xfz to manage usage-budgets in tenancy"
         ]
