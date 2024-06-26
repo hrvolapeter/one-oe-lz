@@ -109,7 +109,7 @@
         "description": "POL.05 Open LZ policy which allows grp-auditors-xfz  group users to read all the resources in the tenancy.",
         "compartment_id": "TENANCY-ROOT",
         "statements": [
-          "allow groupgrp-auditors-xfz to inspect all-resources in tenancy",
+          "allow group grp-auditors-xfz to inspect all-resources in tenancy",
           "allow groupgrp-auditors-xfz to read instances in tenancy",
           "allow groupgrp-auditors-xfz to read load-balancers in tenancy",
           "allow groupgrp-auditors-xfz to read buckets in tenancy",
