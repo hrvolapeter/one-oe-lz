@@ -1,12 +1,93 @@
 {
     "network_configuration": {
         "default_enable_cis_checks": false,
-        "default_compartment_id": "CMP-NETWORK-KEY",
+        "default_compartment_id": "CMP-C-NETWORK-KEY",
         "network_configuration_categories": {
-            "shared": {
-                "category_compartment_id": "CMP-NETWORK-KEY",
+            "prod": {
+                "category_compartment_id": "CMP-P-NETWORK-KEY",
                 "vcns": {
-                    "VCN-FRA-P-HUB-KEY": {
+                    "VCN-FRA-P-SPOKE-KEY": {
+                        "display_name": "vcn-lzp-p-spoke",
+                        "block_nat_traffic": false,
+                        "cidr_blocks": [
+                            "10.0.8.0/21"
+                        ],
+                        "dhcp_options": {},
+                        "dns_label": "frapspoke",
+                        "is_attach_drg": false,
+                        "is_create_igw": false,
+                        "is_ipv6enabled": false,
+                        "is_oracle_gua_allocation_enabled": false,
+                        "network_security_groups": {},
+                        "security_lists": {},
+                        "route_tables": {
+                            "RT-00-P-SPOKE-VCN-INGRESS-KEY": {
+                                "display_name": "rt-00-p-spoke-vcn-ingress",
+                                "route_rules": {}
+                            }
+                        },
+                        "subnets": {}
+                    }
+                }
+            },
+            "uat": {
+                "category_compartment_id": "CMP-U-NETWORK-KEY",
+                "vcns": {
+                    "VCN-FRA-U-SPOKE-KEY": {
+                        "display_name": "vcn-lzp-u-spoke",
+                        "block_nat_traffic": false,
+                        "cidr_blocks": [
+                            "10.0.16.0/21"
+                        ],
+                        "dhcp_options": {},
+                        "dns_label": "frauspoke",
+                        "is_attach_drg": false,
+                        "is_create_igw": false,
+                        "is_ipv6enabled": false,
+                        "is_oracle_gua_allocation_enabled": false,
+                        "network_security_groups": {},
+                        "security_lists": {},
+                        "route_tables": {
+                            "RT-00-U-SPOKE-VCN-INGRESS-KEY": {
+                                "display_name": "rt-00-u-spoke-vcn-ingress",
+                                "route_rules": {}
+                            }
+                        },
+                        "subnets": {}
+                    }
+                }
+            },
+            "dev": {
+                "category_compartment_id": "CMP-D-NETWORK-KEY",
+                "vcns": {
+                    "VCN-FRA-D-SPOKE-KEY": {
+                        "display_name": "vcn-lzp-d-spoke",
+                        "block_nat_traffic": false,
+                        "cidr_blocks": [
+                            "10.0.24.0/21"
+                        ],
+                        "dhcp_options": {},
+                        "dns_label": "fradspoke",
+                        "is_attach_drg": false,
+                        "is_create_igw": false,
+                        "is_ipv6enabled": false,
+                        "is_oracle_gua_allocation_enabled": false,
+                        "network_security_groups": {},
+                        "security_lists": {},
+                        "route_tables": {
+                            "RT-00-D-SPOKE-VCN-INGRESS-KEY": {
+                                "display_name": "rt-00-d-spoke-vcn-ingress",
+                                "route_rules": {}
+                            }
+                        },
+                        "subnets": {}
+                    }
+                }
+            },
+            "shared": {
+                "category_compartment_id": "CMP-C-NETWORK-KEY",
+                "vcns": {
+                    "VCN-FRA-C-HUB-KEY": {
                         "block_nat_traffic": false,
                         "cidr_blocks": [
                             "10.0.0.0/21"
@@ -116,7 +197,6 @@
                                 }
                             }
                         },
-                        "default_route_table": {},
                         "route_tables": {
                             "RT-00-HUB-VCN-INGRESS-KEY": {
                                 "display_name": "rt-00-hub-vcn-ingress",
@@ -337,9 +417,36 @@
                                     "display_name": "drgatt-vcn-fra-hub",
                                     "drg_route_table_key": "DRGRT-VCN-FRA-HUB-KEY",
                                     "network_details": {
-                                        "attached_resource_key": "VCN-FRA-P-HUB-KEY",
+                                        "attached_resource_key": "VCN-FRA-C-HUB-KEY",
                                         "type": "VCN",
                                         "route_table_key": "RT-00-HUB-VCN-INGRESS-KEY"
+                                    }
+                                },
+                                "DRGATT-VCN-FRA-P-SPOKE-KEY": {
+                                    "display_name": "drgatt-vcn-fra-p-spoke",
+                                    "drg_route_table_key": "DRGRT-VCN-FRA-HUB-KEY",
+                                    "network_details": {
+                                        "attached_resource_key": "VCN-FRA-P-SPOKE-KEY",
+                                        "type": "VCN",
+                                        "route_table_key": "RT-00-P-SPOKE-INGRESS-KEY"
+                                    }
+                                },
+                                "DRGATT-VCN-FRA-U-SPOKE-KEY": {
+                                    "display_name": "drgatt-vcn-fra-u-spoke",
+                                    "drg_route_table_key": "DRGRT-VCN-FRA-HUB-KEY",
+                                    "network_details": {
+                                        "attached_resource_key": "VCN-FRA-U-SPOKE-KEY",
+                                        "type": "VCN",
+                                        "route_table_key": "RT-00-U-SPOKE-INGRESS-KEY"
+                                    }
+                                },
+                                "DRGATT-VCN-FRA-D-SPOKE-KEY": {
+                                    "display_name": "drgatt-vcn-fra-d-spoke",
+                                    "drg_route_table_key": "DRGRT-VCN-FRA-HUB-KEY",
+                                    "network_details": {
+                                        "attached_resource_key": "VCN-FRA-D-SPOKE-KEY",
+                                        "type": "VCN",
+                                        "route_table_key": "RT-00-D-SPOKE-INGRESS-KEY"
                                     }
                                 }
                             },
@@ -352,12 +459,7 @@
                                 }
                             }
                         }
-                    },
-                    "network_firewalls_configuration": {
-                        "network_firewalls": {},
-                        "network_firewall_policies": {}
-                    },
-                    "l7_load_balancers": {}
+                    }
                 }
             }
         }
@@ -370,15 +472,15 @@
                 "name": "cmp-lzp",
                 "description": "one-oe-lz environment:PROD ",
                 "children": {
-                    "CMP-NETWORK-KEY": {
+                    "CMP-C-NETWORK-KEY": {
                         "name": "cmp-lzp-network",
                         "description": "one-oe-lz environment:PROD compartment:LZP"
                     },
-                    "CMP-SECURITY-KEY": {
+                    "CMP-C-SECURITY-KEY": {
                         "name": "cmp-lzp-security",
                         "description": "one-oe-lz environment:PROD compartment:LZP"
                     },
-                    "CMP-PLATFORM-KEY": {
+                    "CMP-C-PLATFORM-KEY": {
                         "name": "cmp-lzp-platform",
                         "description": "one-oe-lz environment:PROD compartment:LZP"
                     },
@@ -400,7 +502,13 @@
                             },
                             "CMP-P-PROJECTS-KEY": {
                                 "name": "cmp-lzp-p-projects",
-                                "description": "one-oe-lz environment:PROD compartment:LZP/PROD"
+                                "description": "one-oe-lz environment:PROD compartment:LZP/PROD",
+                                "children": {
+                                    "CMP-P-PROJECT1-KEY": {
+                                        "name": "cmp-lzp-p-project1",
+                                        "description": "one-oe-lz environment:PROD compartment:LZP/PROD/PROJECTS"
+                                    }
+                                }
                             }
                         }
                     },
@@ -422,29 +530,41 @@
                             },
                             "CMP-U-PROJECTS-KEY": {
                                 "name": "cmp-lzp-u-projects",
-                                "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
+                                "description": "one-oe-lz environment:UAT compartment:LZP/UAT",
+                                "children": {
+                                    "CMP-U-PROJECT1-KEY": {
+                                        "name": "cmp-lzp-u-project1",
+                                        "description": "one-oe-lz environment:UAT compartment:LZP/UAT/PROJECTS"
+                                    }
+                                }
                             }
                         }
                     },
                     "CMP-DEV-KEY": {
-                        "name": "cmp-lzd-dev",
+                        "name": "cmp-lzp-dev",
                         "description": "one-oe-lz environment:DEV compartment:LZD",
                         "children": {
                             "CMP-D-NETWORK-KEY": {
-                                "name": "cmp-lzd-d-network",
-                                "description": "one-oe-lz environment:DEV compartment:LZD/DEV"
+                                "name": "cmp-lzp-d-network",
+                                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
                             },
                             "CMP-D-SECURITY-KEY": {
-                                "name": "cmp-lzd-d-security",
-                                "description": "one-oe-lz environment:DEV compartment:LZD/DEV"
+                                "name": "cmp-lzp-d-security",
+                                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
                             },
                             "CMP-D-PLATFORM-KEY": {
-                                "name": "cmp-lzd-d-platform",
-                                "description": "one-oe-lz environment:DEV compartment:LZD/DEV"
+                                "name": "cmp-lzp-d-platform",
+                                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
                             },
                             "CMP-D-PROJECTS-KEY": {
-                                "name": "cmp-lzd-d-projects",
-                                "description": "one-oe-lz environment:DEV compartment:LZD/DEV"
+                                "name": "cmp-lzp-d-projects",
+                                "description": "one-oe-lz environment:DEV compartment:LZP/DEV",
+                                "children": {
+                                    "CMP-D-PROJECT1-KEY": {
+                                        "name": "cmp-lzp-d-project1",
+                                        "description": "one-oe-lz environment:DEV compartment:LZP/DEV/PROJECTS"
+                                    }
+                                }
                             }
                         }
                     }
