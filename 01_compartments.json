@@ -1,0 +1,110 @@
+{
+  "compartments_configuration": {
+    "enable_delete": true,
+    "default_parent_id": "ocid1.compartment.oc1..aaaaaaaaft6mnil4nomqh2chnjyc5zzgmfryye3zzyzpugwsbmuvdyrhhq5a",
+    "compartments": {
+      "CMP-LANDINGZONE-P-KEY": {
+        "name": "cmp-lzp",
+        "description": "one-oe-lz environment:PROD ",
+        "children": {
+          "CMP-C-NETWORK-KEY": {
+            "name": "cmp-lzp-network",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          },
+          "CMP-C-SECURITY-KEY": {
+            "name": "cmp-lzp-security",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          },
+          "CMP-C-PLATFORM-KEY": {
+            "name": "cmp-lzp-platform",
+            "description": "one-oe-lz environment:PROD compartment:LZP"
+          },
+          "CMP-PROD-KEY": {
+            "name": "cmp-lzp-prod",
+            "description": "one-oe-lz environment:PROD compartment:LZP",
+            "children": {
+              "CMP-P-NETWORK-KEY": {
+                "name": "cmp-lzp-p-network",
+                "description": "one-oe-lz environment:PROD compartment:LZP/PROD"
+              },
+              "CMP-P-SECURITY-KEY": {
+                "name": "cmp-lzp-p-security",
+                "description": "one-oe-lz environment:PROD compartment:LZP/PROD"
+              },
+              "CMP-P-PLATFORM-KEY": {
+                "name": "cmp-lzp-p-platform",
+                "description": "one-oe-lz environment:PROD compartment:LZP/PROD"
+              },
+              "CMP-P-PROJECTS-KEY": {
+                "name": "cmp-lzp-p-projects",
+                "description": "one-oe-lz environment:PROD compartment:LZP/PROD",
+                "children": {
+                  "CMP-P-PROJECT1-KEY": {
+                    "name": "cmp-lzp-p-project1",
+                    "description": "one-oe-lz environment:PROD compartment:LZP/PROD/PROJECTS"
+                  }
+                }
+              }
+            }
+          },
+          "CMP-UAT-KEY": {
+            "name": "cmp-lzp-uat",
+            "description": "one-oe-lz environment:UAT compartment:LZP",
+            "children": {
+              "CMP-U-NETWORK-KEY": {
+                "name": "cmp-lzp-u-network",
+                "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
+              },
+              "CMP-U-SECURITY-KEY": {
+                "name": "cmp-lzp-u-security",
+                "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
+              },
+              "CMP-U-PLATFORM-KEY": {
+                "name": "cmp-lzp-u-platform",
+                "description": "one-oe-lz environment:UAT compartment:LZP/UAT"
+              },
+              "CMP-U-PROJECTS-KEY": {
+                "name": "cmp-lzp-u-projects",
+                "description": "one-oe-lz environment:UAT compartment:LZP/UAT",
+                "children": {
+                  "CMP-U-PROJECT1-KEY": {
+                    "name": "cmp-lzp-u-project1",
+                    "description": "one-oe-lz environment:UAT compartment:LZP/UAT/PROJECTS"
+                  }
+                }
+              }
+            }
+          },
+          "CMP-DEV-KEY": {
+            "name": "cmp-lzp-dev",
+            "description": "one-oe-lz environment:DEV compartment:LZD",
+            "children": {
+              "CMP-D-NETWORK-KEY": {
+                "name": "cmp-lzp-d-network",
+                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
+              },
+              "CMP-D-SECURITY-KEY": {
+                "name": "cmp-lzp-d-security",
+                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
+              },
+              "CMP-D-PLATFORM-KEY": {
+                "name": "cmp-lzp-d-platform",
+                "description": "one-oe-lz environment:DEV compartment:LZP/DEV"
+              },
+              "CMP-D-PROJECTS-KEY": {
+                "name": "cmp-lzp-d-projects",
+                "description": "one-oe-lz environment:DEV compartment:LZP/DEV",
+                "children": {
+                  "CMP-D-PROJECT1-KEY": {
+                    "name": "cmp-lzp-d-project1",
+                    "description": "one-oe-lz environment:DEV compartment:LZP/DEV/PROJECTS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
