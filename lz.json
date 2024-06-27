@@ -428,7 +428,7 @@
                                     "network_details": {
                                         "attached_resource_key": "VCN-FRA-P-SPOKE-KEY",
                                         "type": "VCN",
-                                        "route_table_key": "RT-00-P-SPOKE-INGRESS-KEY"
+                                        "route_table_key": "RT-00-P-SPOKE-VCN-INGRESS-KEY"
                                     }
                                 },
                                 "DRGATT-VCN-FRA-U-SPOKE-KEY": {
@@ -437,7 +437,7 @@
                                     "network_details": {
                                         "attached_resource_key": "VCN-FRA-U-SPOKE-KEY",
                                         "type": "VCN",
-                                        "route_table_key": "RT-00-U-SPOKE-INGRESS-KEY"
+                                        "route_table_key": "RT-00-U-SPOKE-VCN-INGRESS-KEY"
                                     }
                                 },
                                 "DRGATT-VCN-FRA-D-SPOKE-KEY": {
@@ -446,7 +446,7 @@
                                     "network_details": {
                                         "attached_resource_key": "VCN-FRA-D-SPOKE-KEY",
                                         "type": "VCN",
-                                        "route_table_key": "RT-00-D-SPOKE-INGRESS-KEY"
+                                        "route_table_key": "RT-00-D-SPOKE-VCN-INGRESS-KEY"
                                     }
                                 }
                             },
